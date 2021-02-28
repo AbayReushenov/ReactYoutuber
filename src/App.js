@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Modalin from './Components/Modal/Modalin';
+import ModalCodeevolution from './Components/ModalCodeevolution/ModalCodeevolution';
+import Main from './Components/Main/Main';
+import ModalBootstrap from './Components/ModalBootstrap/ModalBootstrap';
+import ModalToDoListProps from './Components/ModalToDoListProps/ModalToDoListProps';
+import ModalTodolistContext from './Components/ModalTodolistContext/ModalTodolistContext'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Modalin />
+      <ModalCodeevolution />
+      <Main />
+      <ModalBootstrap />
+      <ModalToDoListProps />
+      <ModalTodolistContext />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+ul li .active {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+ul li button {
+    cursor: pointer;
+}
+ul li button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
