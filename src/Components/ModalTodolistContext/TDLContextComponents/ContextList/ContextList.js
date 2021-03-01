@@ -16,7 +16,16 @@ export default function ContextList() {
     updateDela(newDela);
   };
 
-  console.log(dela);
+  const handlerEditOdnoDelo = (editvalue, id) => {
+    const newDela = [...dela];
+    newDela.forEach((odnodelo) => {
+      if (odnodelo.key === id) {
+        odnodelo.name = editvalue;
+      }
+    });
+    updateDela(newDela);
+  };
+
   return (
     <ul>
       {dela.map((odnodelo) => (
@@ -25,6 +34,7 @@ export default function ContextList() {
           key={odnodelo.key}
           id={odnodelo.key}
           handlerCheckStatus={handlerCheckStatus}
+          handlerEditOdnoDelo={handlerEditOdnoDelo}
         />
       ))}
     </ul>

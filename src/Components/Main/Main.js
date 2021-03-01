@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ModalMygame from '../ModalMygame/ModalMygame';
 function Main() {
   const slovo = [

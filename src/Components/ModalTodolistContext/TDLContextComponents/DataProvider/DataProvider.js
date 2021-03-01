@@ -1,5 +1,4 @@
 import React, { useState, useEffect, createContext } from 'react';
-import uniqid from 'uniqid';
 
 export const DataContext = createContext();
 

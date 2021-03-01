@@ -1,10 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { DataContext } from '../DataProvider/DataProvider';
 import uniqid from 'uniqid';
 
 export default function ContextForm() {
   const [dela, updateDela] = useContext(DataContext);
   const [nowItem, setNewItem] = useState('');
+  const itemInput = useRef();
 
   function handlerItem(e) {
     setNewItem(e.target.value.toLowerCase());
@@ -12,10 +13,14 @@ export default function ContextForm() {
 
   function handlerAddDelo(event) {
     event.preventDefault();
-    updateDela([...dela, { name: nowItem, status:false, key: uniqid() }]);
+    updateDela([...dela, { name: nowItem, status: false, key: uniqid() }]);
     setNewItem('');
-    // console.log(dela);
+    itemInput.current.focus();
   }
+
+  useEffect(() => {
+    itemInput.current.focus();
+  }, []);
 
   return (
     <form
@@ -24,6 +29,7 @@ export default function ContextForm() {
       className="d-flex justify-content-between"
     >
       <input
+        ref={itemInput}
         required
         type="text"
         className="form-control"
